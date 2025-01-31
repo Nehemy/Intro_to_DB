@@ -1,11 +1,10 @@
 import mysql.connector
 
 try:
-    # Connect to MySQL server
     connection = mysql.connector.connect(
         host="localhost",
-        user="your_username",
-        password="your_password"
+        user="username",
+        password="password"
     )
 
     cursor = connection.cursor()
@@ -19,7 +18,6 @@ except mysql.connector.Error as err:
     print(f"Error: {err}")
 
 finally:
-    # Close cursor and connection
     if 'cursor' in locals() and cursor:
         cursor.close()
     if 'connection' in locals() and connection.is_connected():
